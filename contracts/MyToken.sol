@@ -13,25 +13,26 @@ import "hardhat/console.sol";
 
 contract SMMarketplace is ERC721URIStorage {
     using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
+    Counters.Counter private _ids;
     Counters.Counter private _itemsSold;
 
-    uint256 listingPrice = 0.025 ether; // 25000000000000000 wei (1 wei = 10^-18 ETH)
+    //FIXME: la comision debe ser un porcentaje
+    //TODO: debe definirse un monto minimo para los assets (este monto debe ser mayor que la comision) 
+    uint256 txCommission = 0.025 ether; // 25000000000000000 wei (1 wei = 10^-18 ETH)
     address payable owner;
 
-    // TODO: cambiar a privado
-    mapping(uint256 => MarketItem) public idToMarketItem;
+    mapping(uint256 => Asset) private idToAsset;
 
-    struct MarketItem {
-        uint256 tokenId;
+    struct Asset {
+        uint256 id;
         address payable seller;
         address payable owner;
         uint256 price;
         bool sold;
     }
 
-    event MarketItemCreated(
-        uint256 indexed tokenId,
+    event AssetCreated(
+        uint256 indexed id,
         address seller,
         address owner,
         uint256 price,
@@ -39,62 +40,99 @@ contract SMMarketplace is ERC721URIStorage {
     );
 
     constructor() ERC721("SM Marketplace", "FC") {
-        owner = payable(msg.sender);
+        owner = payable(msg.sender); // Quien deploya el contrato en la red
     }
 
-    /* Updates the listing price of the contract */
-    function updateListingPrice(uint256 _listingPrice) public payable {
+    function updateTxCommission(uint256 _txCommission) public payable {
         require(
             owner == msg.sender,
             "Only marketplace owner can update listing price."
         );
-        listingPrice = _listingPrice;
+        txCommission = _txCommission;
     }
 
-    /* Returns the listing price of the contract */
-    function getListingPrice() public view returns (uint256) {
-        return listingPrice;
+    function getTxCommission() public view returns (uint256) {
+        return txCommission;
     }
 
     /* Mints a token and lists it in the marketplace */
-    function createToken(string memory tokenURI, uint256 price)
+    function createToken(string memory tokenURI)
         public
         payable
         returns (uint256)
     {
-        _tokenIds.increment();
-        uint256 newTokenId = _tokenIds.current();
+        _ids.increment();
+        uint256 newId = _ids.current();
 
-        // Mints tokenId and transfers it to to.
-        _mint(/*to=*/msg.sender, /*tokenId=*/newTokenId);
-        _setTokenURI(newTokenId, tokenURI);
-        createMarketItem(newTokenId, price);
-        return newTokenId;
+        // Mints id and transfers it to to.
+        _mint(
+            /*to=*/
+            msg.sender,
+            /*id=*/
+            newId
+        );
+        _setTokenURI(newId, tokenURI);
+        // createMarketItem(newId, price);
+        return newId;
     }
 
-    function createMarketItem(uint256 tokenId, uint256 price) private {
-        
-        console.log("creando item...: ", tokenId);
+    function newAsset(string memory tokenURI, uint256 price)
+        public
+        payable
+        returns (uint256)
+    {
         require(price > 0, "Price must be at least 1 wei");
         require(
-            msg.value == listingPrice,
+            msg.value == txCommission,
             "Price must be equal to listing price"
         );
 
-        idToMarketItem[tokenId] = MarketItem(
-            tokenId,
+        uint256 newId = createToken(tokenURI);
+
+        idToAsset[newId] = Asset(
+            newId,
             payable(msg.sender),
             payable(address(this)),
             price,
             false
         );
-        _transfer(msg.sender, address(this), tokenId);
-        emit MarketItemCreated(
-            tokenId,
-            msg.sender,
-            address(this),
-            price,
-            false
+
+        // transferimos el token al address del contract ya que
+        // como el token estará en venta, el contract necesita
+        // poder mas adelante poder transferirlo a su nuevo dueno
+        _transfer(msg.sender, address(this), newId);
+
+        emit AssetCreated(newId, msg.sender, address(this), price, false);
+
+        return newId;
+    }
+
+    function getAsset(uint256 id) public view returns (Asset memory) {
+        return idToAsset[id];
+    }
+
+    function buyAsset(uint256 id) public payable {
+        uint256 price = idToAsset[id].price;
+        address seller = idToAsset[id].seller;
+
+        require(
+            msg.value == price,
+            "Please submit the asking price in order to complete the purchase"
         );
+
+        idToAsset[id].owner = payable(msg.sender);
+        idToAsset[id].sold = true;
+        idToAsset[id].seller = payable(address(0));
+
+        _itemsSold.increment();
+        _transfer(address(this), msg.sender, id);
+
+        // FIXME: la comision debe salir del monto de mgs.value, seria:
+        // pay to seller: msg.value - txCommission
+        // pay to owner : txCommission
+        // payable(owner).transfer(txCommission); // pago de commission al owner
+
+        // se resta el valor de la comision al monto total de la compra
+        payable(seller).transfer(msg.value - txCommission); // transferencia al vendedor
     }
 }

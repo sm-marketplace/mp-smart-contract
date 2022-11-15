@@ -66,7 +66,7 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "id",
 						"type": "uint256"
 					},
 					{
@@ -94,7 +94,7 @@
 						"type": "bool"
 					}
 				],
-				"name": "MarketItemCreated",
+				"name": "AssetCreated",
 				"type": "event"
 			},
 			{
@@ -162,14 +162,22 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "buyAsset",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "tokenURI",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
 					}
 				],
 				"name": "createToken",
@@ -203,52 +211,59 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getListingPrice",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "id",
 						"type": "uint256"
+					}
+				],
+				"name": "getAsset",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "sold",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct SMMarketplace.Asset",
+						"name": "",
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "getTxCommission",
+				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"name": "idToMarketItem",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "tokenId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address payable",
-						"name": "seller",
-						"type": "address"
-					},
-					{
-						"internalType": "address payable",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "sold",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -289,6 +304,30 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tokenURI",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "newAsset",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -457,11 +496,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_listingPrice",
+						"name": "_txCommission",
 						"type": "uint256"
 					}
 				],
-				"name": "updateListingPrice",
+				"name": "updateTxCommission",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -631,11 +670,11 @@
 			]
 		},
 		"contracts/MyToken.sol": {
-			"keccak256": "0x87ab34834fd0eb5918216962a03cacb2a5e8a88c4f3c06a8e756f6d918ba7fb5",
+			"keccak256": "0x13b3341c3cd952610e23c284b688e38c2e557723077e6c93f398fc8bf00ae167",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://52181f30fd1b8267fe91f4991f5fe8f3f849f04fbe5fd943712af2b6327d0460",
-				"dweb:/ipfs/QmSEwFevjdtuPRytSa9afK7NaeE7whV5VYANBLWHXv4NxT"
+				"bzz-raw://b1137296fcf9c3afd7d37b88b1b76c806c9e1026e0f1ee2e4538f13fa9ee2bdb",
+				"dweb:/ipfs/QmTyynFFvTbcqMwxAqqF2qo3uD7qM6cGAobAbXdcHLuAo7"
 			]
 		},
 		"hardhat/console.sol": {
