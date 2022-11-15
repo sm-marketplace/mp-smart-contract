@@ -1,2 +1,5 @@
-# mp-smart-contract
-Remix project for marketplace smart contract 
+# SM Marketplace - Smart Contract
+
+
+## Refences
+- This code is based on: https://github.com/dabit3/polygon-ethereum-nextjs-marketplace/blob/main/contracts/NFTMarketplace.sol
