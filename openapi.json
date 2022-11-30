@@ -1,0 +1,1055 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "SMMarketplace",
+        "description": "SMMarketplace",
+        "version": "1.0.0",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "tags": [
+        {
+            "name": "approveScope",
+            "description": "Dynamic Scope for approve"
+        },
+        {
+            "name": "balanceOfScope",
+            "description": "Dynamic Scope for balanceOf"
+        },
+        {
+            "name": "buyAssetScope",
+            "description": "Dynamic Scope for buyAsset"
+        },
+        {
+            "name": "createTokenScope",
+            "description": "Dynamic Scope for createToken"
+        },
+        {
+            "name": "getApprovedScope",
+            "description": "Dynamic Scope for getApproved"
+        },
+        {
+            "name": "getAssetScope",
+            "description": "Dynamic Scope for getAsset"
+        },
+        {
+            "name": "getTxCommissionScope",
+            "description": "Dynamic Scope for getTxCommission"
+        },
+        {
+            "name": "isApprovedForAllScope",
+            "description": "Dynamic Scope for isApprovedForAll"
+        },
+        {
+            "name": "nameScope",
+            "description": "Dynamic Scope for name"
+        },
+        {
+            "name": "newAssetScope",
+            "description": "Dynamic Scope for newAsset"
+        },
+        {
+            "name": "ownerOfScope",
+            "description": "Dynamic Scope for ownerOf"
+        },
+        {
+            "name": "safeTransferFromScope",
+            "description": "Dynamic Scope for safeTransferFrom"
+        },
+        {
+            "name": "safeTransferFromScope",
+            "description": "Dynamic Scope for safeTransferFrom"
+        },
+        {
+            "name": "setApprovalForAllScope",
+            "description": "Dynamic Scope for setApprovalForAll"
+        },
+        {
+            "name": "supportsInterfaceScope",
+            "description": "Dynamic Scope for supportsInterface"
+        },
+        {
+            "name": "symbolScope",
+            "description": "Dynamic Scope for symbol"
+        },
+        {
+            "name": "tokenURIScope",
+            "description": "Dynamic Scope for tokenURI"
+        },
+        {
+            "name": "transferFromScope",
+            "description": "Dynamic Scope for transferFrom"
+        },
+        {
+            "name": "updateTxCommissionScope",
+            "description": "Dynamic Scope for updateTxCommission"
+        }
+    ],
+    "paths": {
+        "/approve": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "approve_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/approve_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_approve",
+                "tags": [
+                    "approveScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/approve_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/balanceOf": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "balanceOf_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/balanceOf_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_balanceOf",
+                "tags": [
+                    "balanceOfScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/balanceOf_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/buyAsset": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "buyAsset_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/buyAsset_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_buyAsset",
+                "tags": [
+                    "buyAssetScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/buyAsset_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/createToken": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createToken_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createToken_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_createToken",
+                "tags": [
+                    "createTokenScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/createToken_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/getApproved": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "getApproved_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getApproved_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_getApproved",
+                "tags": [
+                    "getApprovedScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/getApproved_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/getAsset": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "getAsset_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getAsset_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_getAsset",
+                "tags": [
+                    "getAssetScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/getAsset_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/getTxCommission": {
+            "post": {
+                "operationId": "post_getTxCommission",
+                "tags": [
+                    "getTxCommissionScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/getTxCommission_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/isApprovedForAll": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "isApprovedForAll_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/isApprovedForAll_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_isApprovedForAll",
+                "tags": [
+                    "isApprovedForAllScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/isApprovedForAll_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/name": {
+            "post": {
+                "operationId": "post_name",
+                "tags": [
+                    "nameScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/name_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/newAsset": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "newAsset_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/newAsset_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_newAsset",
+                "tags": [
+                    "newAssetScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/newAsset_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/ownerOf": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "ownerOf_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ownerOf_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_ownerOf",
+                "tags": [
+                    "ownerOfScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ownerOf_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/safeTransferFrom": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "safeTransferFrom_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/safeTransferFrom_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_safeTransferFrom",
+                "tags": [
+                    "safeTransferFromScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/safeTransferFrom_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/setApprovalForAll": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "setApprovalForAll_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/setApprovalForAll_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_setApprovalForAll",
+                "tags": [
+                    "setApprovalForAllScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/setApprovalForAll_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/supportsInterface": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "supportsInterface_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/supportsInterface_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_supportsInterface",
+                "tags": [
+                    "supportsInterfaceScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/supportsInterface_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/symbol": {
+            "post": {
+                "operationId": "post_symbol",
+                "tags": [
+                    "symbolScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/symbol_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/tokenURI": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "tokenURI_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/tokenURI_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_tokenURI",
+                "tags": [
+                    "tokenURIScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/tokenURI_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/transferFrom": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "transferFrom_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/transferFrom_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_transferFrom",
+                "tags": [
+                    "transferFromScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/transferFrom_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/updateTxCommission": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "updateTxCommission_post_params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/updateTxCommission_post_params"
+                        }
+                    }
+                ],
+                "operationId": "post_updateTxCommission",
+                "tags": [
+                    "updateTxCommissionScope"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/updateTxCommission_post_params_response"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "address": {
+            "type": "string"
+        },
+        "receipt": {
+            "type": "object",
+            "properties": {
+                "hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "approve_post_params": {
+            "type": "object",
+            "properties": {
+                "to": {
+                    "$ref": "#/definitions/address"
+                },
+                "tokenId": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "approve_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "balanceOf_post_params": {
+            "type": "object",
+            "properties": {
+                "owner": {
+                    "$ref": "#/definitions/address"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "balanceOf_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "buyAsset_post_params": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "buyAsset_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "createToken_post_params": {
+            "type": "object",
+            "properties": {
+                "tokenURI": {
+                    "type": "string"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "createToken_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "getApproved_post_params": {
+            "type": "object",
+            "properties": {
+                "tokenId": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "getApproved_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "getAsset_post_params": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "getAsset_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "getTxCommission_post_params": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "getTxCommission_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "isApprovedForAll_post_params": {
+            "type": "object",
+            "properties": {
+                "owner": {
+                    "$ref": "#/definitions/address"
+                },
+                "operator": {
+                    "$ref": "#/definitions/address"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "isApprovedForAll_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "name_post_params": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "name_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "newAsset_post_params": {
+            "type": "object",
+            "properties": {
+                "tokenURI": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "newAsset_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "ownerOf_post_params": {
+            "type": "object",
+            "properties": {
+                "tokenId": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "ownerOf_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "safeTransferFrom_post_params": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/definitions/address"
+                },
+                "to": {
+                    "$ref": "#/definitions/address"
+                },
+                "tokenId": {
+                    "type": "number"
+                },
+                "data": {
+                    "type": "string"
+                }
+            }
+        },
+        "safeTransferFrom_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "setApprovalForAll_post_params": {
+            "type": "object",
+            "properties": {
+                "operator": {
+                    "$ref": "#/definitions/address"
+                },
+                "approved": {
+                    "type": "boolean"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "setApprovalForAll_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "supportsInterface_post_params": {
+            "type": "object",
+            "properties": {
+                "interfaceId": {
+                    "type": "string"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "supportsInterface_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "symbol_post_params": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "symbol_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "tokenURI_post_params": {
+            "type": "object",
+            "properties": {
+                "tokenId": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "tokenURI_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "transferFrom_post_params": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/definitions/address"
+                },
+                "to": {
+                    "$ref": "#/definitions/address"
+                },
+                "tokenId": {
+                    "type": "number"
+                }
+            }
+        },
+        "transferFrom_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        },
+        "updateTxCommission_post_params": {
+            "type": "object",
+            "properties": {
+                "_txCommission": {
+                    "type": "number"
+                },
+                "from": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "updateTxCommission_post_params_response": {
+            "type": "object",
+            "properties": {
+                "receipt": {
+                    "$ref": "#/definitions/receipt"
+                }
+            }
+        }
+    },
+    "schemes": [
+        "https"
+    ],
+    "host": "localhost:8080",
+    "basePath": "/"
+}

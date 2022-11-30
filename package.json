@@ -1,0 +1,34 @@
+{
+  "name": "mp-smart-contract",
+  "version": "1.0.0",
+  "description": "- This code is based on: https://github.com/dabit3/polygon-ethereum-nextjs-marketplace/blob/main/contracts/NFTMarketplace.sol",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sm-marketplace/mp-smart-contract.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sm-marketplace/mp-smart-contract/issues"
+  },
+  "homepage": "https://github.com/sm-marketplace/mp-smart-contract#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.8.0",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
