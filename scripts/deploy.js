@@ -7,9 +7,12 @@ async function main() {
   await smMarketplace.deployed();
   console.log("Deployed to:", smMarketplace.address);
 
-  fs.writeFileSync('./config.js', `
-  export const marketplaceAddress = "${smMarketplace.address}"
-  `)
+  const artifact = {
+    network: hre.network.name,
+    address: smMarketplace.address
+  };
+
+  fs.writeFileSync('./contract-address.json', JSON.stringify(artifact));
 }
 
 main()

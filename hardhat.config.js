@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('dotenv-defaults').config()
 
 /** @type import('hardhat/config').HardhatUserConfig */
 require("@nomiclabs/hardhat-waffle");
@@ -6,6 +7,10 @@ require("@nomiclabs/hardhat-waffle");
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
+    localnet: {
+      url: `http://127.0.0.1:3000`, // 
+      accounts: [ '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80' ] // Private key
+    },
     hardhat: {
       chainId: 1337
     },
