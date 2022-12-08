@@ -1,5 +1,8 @@
 # SM Marketplace - Smart Contract
 
+## Requirements
+- Node 16
+
 ## Docker Image
 ```sh
 docker pull rogrp6/smmp-web3net
@@ -13,7 +16,7 @@ docker exec -it smmp-web3net /bin/sh -c \
   > contract-address.txt # Direccion del smart contract
 ```
 
-## Contribute
+## Development
 
 ### Iniciar red local
 
