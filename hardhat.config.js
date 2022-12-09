@@ -45,13 +45,3 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     console.log(account);
   }
 });
-
-task("wallet", "Prints wallet", async (taskArgs, hre) => {
-  const wallet = await hre.ethers.getSigner();
-
-  console.log(wallet);
-
-  // for (const account of accounts) {
-  //   console.log(account);
-  // }
-});

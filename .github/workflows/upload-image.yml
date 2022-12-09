@@ -1,8 +1,11 @@
-name: Deploy DEV
+name: Upload Image
 
 env:
   DOCKER_IMAGE: rogrp6/smmp-smart-contract
   DOCKER_TAG: latest
+  ACCOUNT_SECRET_KEY: secrets.ACCOUNT_SECRET_KEY
+  ALCHEMY_API_KEY: secrets.ALCHEMY_API_KEY
+  NETWORK: goerli
 
 on:
   push:
@@ -22,13 +25,16 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 14
+        node-version: 16
     
     - name: Install dependencies
       run: npm install
 
     - name: Compile contract
       run: npx hardhat compile
+
+    - name: Deploy contract
+      run: 
     
     - name: Build the Docker image
       run: docker build . -t $DOCKER_IMAGE:$DOCKER_TAG

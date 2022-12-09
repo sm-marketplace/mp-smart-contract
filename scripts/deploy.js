@@ -1,5 +1,8 @@
 const hre = require("hardhat");
 const fs = require('fs');
+const path = require('path');
+
+const ARTIFACT_FILE = 'deploy/deploy-artifact.json'
 
 async function main() {
   const SMMarketplace = await hre.ethers.getContractFactory("SMMarketplace");
@@ -12,7 +15,17 @@ async function main() {
     address: smMarketplace.address
   };
 
-  fs.writeFileSync('./contract-address.json', JSON.stringify(artifact));
+  ensureDirectoryExistence(ARTIFACT_FILE);
+  fs.writeFileSync(ARTIFACT_FILE, JSON.stringify(artifact));
+}
+
+function ensureDirectoryExistence(filePath) {
+  var dirname = path.dirname(filePath);
+  if (fs.existsSync(dirname)) {
+    return true;
+  }
+  ensureDirectoryExistence(dirname);
+  fs.mkdirSync(dirname);
 }
 
 main()
