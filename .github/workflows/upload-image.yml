@@ -34,7 +34,7 @@ jobs:
       run: npx hardhat compile
 
     - name: Deploy contract
-      run: npx hardhat run scripts/deploy.js--network $NETWORK
+      run: npx hardhat run scripts/deploy.js --network $NETWORK
     
     - name: Build the Docker image
       run: docker build . -t $DOCKER_IMAGE:$DOCKER_TAG
