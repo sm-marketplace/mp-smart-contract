@@ -102,6 +102,12 @@ Si desea usar el smart contract desplegado, en el proyecto web-client necesitara
 node get-artifact.js > contract-artifact.json
 ```
 
+## Test accounts
+the file [test-accounts.txt](test-accounts.txt) contains 20 test accounts. 
+
+WARNING: These accounts, and their private keys, are publicly known.
+Any funds sent to them on Mainnet or any other live network WILL BE LOST.
+
 ## Remix IDE
 Puede usar (Remix IDE)[https://remix.ethereum.org/] para omitir levantar una red local y probar el contrato de forma más sencilla.  
 

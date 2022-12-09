@@ -36,3 +36,22 @@ module.exports = {
     }
   }
 };
+
+task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+  const accounts = await hre.ethers.getSigners();
+
+
+  for (const account of accounts) {
+    console.log(account);
+  }
+});
+
+task("wallet", "Prints wallet", async (taskArgs, hre) => {
+  const wallet = await hre.ethers.getSigner();
+
+  console.log(wallet);
+
+  // for (const account of accounts) {
+  //   console.log(account);
+  // }
+});
