@@ -3,8 +3,8 @@ name: Upload Image
 env:
   DOCKER_IMAGE: rogrp6/smmp-smart-contract
   DOCKER_TAG: latest
-  ACCOUNT_SECRET_KEY: secrets.ACCOUNT_SECRET_KEY
-  ALCHEMY_API_KEY: secrets.ALCHEMY_API_KEY
+  ACCOUNT_SECRET_KEY: ${{ secrets.ACCOUNT_SECRET_KEY }}
+  ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
   NETWORK: goerli
 
 on:
